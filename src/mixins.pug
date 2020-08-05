@@ -1,7 +1,15 @@
 mixin icon(name, className)
+<<<<<<< HEAD:src/mixins.pug
   - var icon =require(`images/icons/${name}.svg`).default;
+=======
+  - var icon = require(`images/icons/${name}.svg`).default;
+>>>>>>> 8a907f613d031f19587b6b7a888afb5b317c5ce3:src/pug/mixins.pug
   svg(class=className viewBox=icon.viewBox preserveAspectRatio="none")
     use(xlink:href=`sprite.svg#${icon.id.replace('-usage', '')}`)
 
 mixin image(path, className)
+<<<<<<< HEAD:src/mixins.pug
   img(src =require(`images/${path}`).default class=className)
+=======
+  img(src=require(`images/${path}`).default class=className)
+>>>>>>> 8a907f613d031f19587b6b7a888afb5b317c5ce3:src/pug/mixins.pug
