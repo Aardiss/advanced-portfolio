@@ -11,7 +11,7 @@
     "build-storybook": "build-storybook"
   },
   "keywords": [],
-  "author": "",
+  "author": "Anastasia <aardiss@mail.ru>",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.10.5",
@@ -62,6 +62,7 @@
     "last 2 versions"
   ],
   "dependencies": {
+    "jquery": "^3.5.1",
     "normalize.css": "^8.0.1",
     "promptly": "^3.0.3",
     "pug": "^3.0.0",
@@ -69,5 +70,6 @@
     "signale": "^1.4.0",
     "vue": "^2.6.7",
     "vue-router": "^3.0.2"
-  }
+  },
+  "repository": "https://github.com/Aardiss/advanced-portfolio.git"
 }
