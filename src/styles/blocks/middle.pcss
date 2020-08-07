@@ -1,9 +1,13 @@
 .middle-section {
-  background: url("~images/bg/Фон.png") center top / cover no-repeat;
-
-    &::after {
-      position: sticky;
-      content: url("~images/bg/Руки.png");
-      bottom: 500px;
-     }            
- }
+  position: relative;
+}
+.middle-section__triangles-top {
+  height: 100px;
+  bottom: 100%;
+  width: 100%;
+}
+.middle-section__triangles-bottom {
+  height: 100px;
+  top: 100%;
+  width: 100%;
+}
