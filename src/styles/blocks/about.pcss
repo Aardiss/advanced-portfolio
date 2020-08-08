@@ -1,5 +1,5 @@
 .about {
-  height: 1152px;
+  margin-top: 39%;
 }
 .about__container {
   display: flex;
@@ -20,16 +20,32 @@
 }
 .about__content {
   flex: 1;
+  padding-left: 87px;
 }
 .about__text-info {
   color: rgba(#fff, .8);
   width: 529px;
   height: 60px;
   font-family: Open Sans;
+  margin-bottom: 92px;
 }
 .about__ps {
   color: rgba(#fff, .8);
   font-style: italic;
   width: 575px;
   height: 90px;
+   display: flex;
+   flex-direction: row-reverse;
+   justify-content: flex-end;
+   margin-left: -26px;
+
+  &::after {
+  content: "";
+  background: url("~images/content/zv.png");
+  width: 19px;
+  height: 19px; 
+  background-repeat: no-repeat;
+  padding-right: 20px;
+  }
+
 }
