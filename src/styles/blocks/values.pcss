@@ -29,16 +29,20 @@
     width: 100%;
   }
 }
+.values__container {
+  height: 100vh;
+  max-width: 100%;
+}
 .values {
   background: url("~images/bg/Фон.png") center top / cover no-repeat;
   height: 1020px;
   display: flex;
 
-   &::after {
+   /* &::after {
       position: sticky;
       content: url("~images/bg/Руки.png");
       bottom: 1955px;
-     }  
+     }   */
   @include desktop {
       height: 1144px;
     }
