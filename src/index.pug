@@ -84,7 +84,7 @@ block content
                          .skill__title #{skill}
    section.works
 
-     .container
+     .container.works__container
        .section-title Мои работы
        .works__content
          .works-preview 
@@ -111,7 +111,7 @@ block content
                 p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
               a(href="").iconed-link Посмотреть сайт 
    section.reviews
-    .container 
+    .container.reviews__container
       .slider
         .slider__header 
           .section-title__reviews Что обо мне говорят
@@ -149,9 +149,9 @@ block content
      .footer__copyright 
        .footer__copyright-col
          .footer__copyright-year &copy; 2020
-       .footer__copyright-userinfo
-         .copyright__name Варфоламей Атаманович
-         .copyright__title Личный сайт #[br] веб разработчика
+         .footer__copyright-userinfo
+           .copyright__name Варфоламей Атаманович
+           .copyright__title Личный сайт #[br] веб разработчика
        .footer__copyright-menu 
          nav.menu
             -var menuItems = ["Обо мне", "Навыки", "Работы", "Отзывы"];

@@ -3,6 +3,16 @@
   justify-content: center;
   margin-top: 33%;
   padding-right: 124px;
+   @include desktop {
+    display: flex;
+    text-align: left;
+    margin-top: 22%;
+  }
+  @include tablets {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
 }
 .userinfo__title {
   font-size: 18px;
@@ -12,6 +22,20 @@
   text-align: right;
   padding-top: 10px;
   margin-right: 52px;
+   @include desktop {
+    text-align: right;
+    margin-bottom: 0;
+    padding-top: 8px;
+    margin-right: 5%;
+  }
+  @include tablets {
+    text-align: center;
+    margin-right: 0;
+  }
+  @include phones {
+    font-size: 14px;
+    padding: 0 10%;
+  }
 
 }
 .userinfo__name {
@@ -19,4 +43,7 @@
   font-size: 72px;
   line-height: 1;
   flex-basis: 400px;
+  @include phones {
+    font-size: 36px;
+  }
 }

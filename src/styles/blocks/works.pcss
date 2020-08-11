@@ -1,6 +1,6 @@
 
 .works-preview__pictures {
-  width: 58%;
+  width: 672px;
   position: relative;
   height: 350px;
 
@@ -16,6 +16,9 @@
     transform: translateX(94%);
     z-index: -1;
   }
+}
+.works__container {
+  width: 100%;
 }
 .works-preview__thumbs {
   position: absolute;
@@ -43,14 +46,17 @@
  margin-top: 30px;
 }
 .works-preview__info {
-  width: 448px;
-  padding-left: 137px;
+  max-width: 448px;
+  padding-left: 88px;
 }
 .works-preview {
   display: flex;
 }
 .works {
-  height: 1032px;
+  height: 1085px;
+  @include desktop {
+    height: 840px;
+  }
 }
 .works-preview__img {
   max-height: 108%;

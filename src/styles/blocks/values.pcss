@@ -5,29 +5,44 @@
   padding-bottom: 44px;
   padding-top: 52px;
 }
+.values__title {
+   padding-top: 150px;
+}
 .values__content {
-width: 601px;
-height: 90px;
-font-weight: 600;
-line-height: 30px;
-color: rgba(255, 255, 255, 0.8);
-text-align: inherit;
-margin-left: 306px;
-max-width: 54%;
-margin-bottom: 78px;
+ max-width: 601px;
+ height: 90px;
+ font-weight: 600;
+ line-height: 30px;
+ color: rgba(255, 255, 255, 0.8);
+ text-align: inherit;
+ margin-left: 306px;
+ margin-bottom: 78px;
 }
 .values__widget {
   display: flex;
   position: relative;
   padding-left: 40%;
+
+  @include desktop { 
+    padding-left: 33%;
+    display: flex;
+    width: 100%;
+  }
 }
 .values {
   background: url("~images/bg/Фон.png") center top / cover no-repeat;
-  height: 892px;
+  height: 1020px;
+  display: flex;
 
-    &::after {
+   /* &::after {
       position: sticky;
       content: url("~images/bg/Руки.png");
       bottom: 1955px;
-     }            
+     }   */
+  @include desktop {
+      height: 1144px;
+    }
+  @include phones {
+    margin-bottom: 75px;
+  }     
 }

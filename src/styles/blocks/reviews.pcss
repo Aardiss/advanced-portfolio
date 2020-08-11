@@ -1,9 +1,23 @@
 .reviews {
-  height: 660px;
-  background: url("~images/bg/Листья.png") center top / cover no-repeat;
+  height: 692px;
+  background: url("~images/bg/Листья.png") center top no-repeat;
+   @include phones {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 33px;
+  }
+  @include desktop {
+   height: 740px;
+  }
 }
 .section-title__reviews {
   font-weight: bold;
  font-size: 36px;
  margin-top: 125px;
+ @include desktop {
+  margin-top: 157px;
+ }
+}
+.reviews__container {
+  width: 100%;
 }

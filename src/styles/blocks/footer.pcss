@@ -1,6 +1,9 @@
 .footer {
   background-color: #222427;
   height: 370px;
+   @include tablets {
+    padding: 50px 0;
+  }
 }
 .footer__copyright-year {
   font-weight: 600;
@@ -11,9 +14,31 @@
 .footer__copyright {
   display: flex;
   padding-top: 72px;
+   @include desktop {
+   padding-top: 80px;
+  }
+  @include tablets {
+    width: 30%;
+  }
+  @include phones {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
+.footer__copyright-col {
+  display: flex;
+  flex-wrap: nowrap;
+  @include desktop {
+   flex-wrap: wrap;
+   width: 20%;
+   margin-right: 59px;
+  }
 }
 .footer__copyright-userinfo {
   min-width: 220px;
+  @include desktop {
+    width: 100%;
+  }
 }
 .footer__copyright-menu {
   min-width: 335px;
@@ -31,4 +56,7 @@
 }
 .footer-socials {
   padding-top: 29px;
+   @include desktop {
+   padding-top: 45px;
+  }
 }

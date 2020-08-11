@@ -1,6 +1,10 @@
 .skill {
   position: relative;
   width: 154px;
+  @include tablets {
+    width: 135px;
+    height: 135px;
+  }
 }
 .skill__circle {
   fill: transparent;
@@ -32,6 +36,9 @@
 font-weight: bold;
 font-size: 24px;
 padding-bottom: 26px;
+@include desktop {
+  padding-bottom: 74px;
+}
 }
 .skills-row__list {
   display: flex;

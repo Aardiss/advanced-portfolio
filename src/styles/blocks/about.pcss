@@ -1,7 +1,11 @@
 .about {
-  margin-top: 39%;
+  margin-top: 27%;
+   @include desktop {
+     margin-top: 33%;
+   }
 }
 .about__container {
+  width: 100%;
   display: flex;
 }
 .about__desc {
@@ -17,14 +21,21 @@
 }
 .about__user {
   width: 36%;
+  @include phones {
+    width: 100%;
+    margin-bottom: 50px;
+  }
 }
 .about__content {
   flex: 1;
   padding-left: 87px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 .about__text-info {
   color: rgba(#fff, .8);
-  width: 529px;
+  max-width: 529px;
   height: 60px;
   font-family: Open Sans;
   margin-bottom: 92px;
@@ -32,7 +43,7 @@
 .about__ps {
   color: rgba(#fff, .8);
   font-style: italic;
-  width: 575px;
+  max-width: 575px;
   height: 90px;
    display: flex;
    flex-direction: row-reverse;
