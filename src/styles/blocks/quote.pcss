@@ -13,6 +13,10 @@
   display: flex;
   flex-direction: row-reverse;
   justify-content: flex-end;
+  margin-bottom: 40px;
+   @include tablets {
+   margin-bottom: 0;
+  }
 
     &::after {
     content: "";
@@ -21,6 +25,10 @@
     height: 60px; 
     background-repeat: no-repeat;
     padding-left: 40px;
+     @include tablets {
+    width: 74px;
+    height: 37px;
+  }
 }
 
     @include tablets {

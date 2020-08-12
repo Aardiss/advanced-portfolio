@@ -8,6 +8,7 @@
 .menu__list {
   display: flex;
   justify-content: center;
+ 
 }
 .menu__link {
   text-decoration: none;
@@ -18,4 +19,9 @@
   color: #ff9a00;
   transition: 1s;
 }
+}
+.menu__header {
+   @include tablets {
+    display: none;
+  }
 }

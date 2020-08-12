@@ -6,6 +6,12 @@
   box-shadow: 0 10px 24px 0 rgba(#000, .3);
   margin: 0 135px;
   flex-shrink: 0;
+  @include tablets {
+    margin: 0;
+  }
+  @include phones {
+    margin: 0 auto;
+  }
 }
 .user__table {
   font-weight: 600;
@@ -17,13 +23,26 @@
   font-weight: 600;
   color: rgba(255, 255, 255, .3);
   padding-bottom: 11px;
+  @include phones {
+    font-size: 15px;
+  }
 }
 .user__data-content {
  font-weight: 600;
  padding-left: 84px;
+ @include tablets {
+    padding-left: 20px;
+  }
+   @include phones {
+    font-size: 15px;
+    padding-left: 62px;
+  }
 }
 .user__avatar {
   margin-bottom: 66px;
+  @include phones {
+   margin-bottom: 18px;
+  }
 }
 .user-display__occ{
   color: rgba($text-color, .3);
@@ -41,5 +60,12 @@
 }
 .user__data {
   margin-left: 56px;
+  @include tablets {
+    margin-left: 0;
+  }
+   @include phones {
+    text-align: inherit;
+    margin: 0 auto;
+  }
 }
 

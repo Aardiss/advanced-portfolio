@@ -6,7 +6,7 @@ block content
       .container.hero__container
         header.header 
           a.logo(href="#") BA
-          nav.menu
+          nav.menu.menu__header
             -var menuItems = ["Обо мне", "Навыки", "Работы", "Отзывы"];
             ul.menu__list
               each item in menuItems 
@@ -14,15 +14,20 @@ block content
                   a(href="#").menu__link #{item}
 
           - var socials = ["insta", "vk", "github", "envelope"];
-          ul.socials
+          ul.socials.header__socials
             each item in socials 
               li.socials__item 
                 a(href="#").socials__link 
                   +icon(item, "socials__icon") 
 
+            .hamburger
+              span.hamburger__plank
+              span.hamburger__plank
+              span.hamburger__plank
+
         .userinfo            
           .userinfo__title Личный сайт #[br] веб разработчика
-          .userinfo__name Варфоламей Атаманович
+          .userinfo__name Варфоламей Атаманов
 
         .hero__bottom-buttons
           button.scroll-down-btn Скролл
@@ -47,7 +52,7 @@ block content
                  td.user__data-content #{item[1]}
        .about__content 
          .about__desc Привет, меня зовут
-         .about__title Варфоламей Атаманович
+         .about__title Варфоламей Атаманов
          .about__text-info
            p Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
          .about__ps 
@@ -62,7 +67,7 @@ block content
        .values__widget 
           -
            var skillsCategories = [
-             ["Frontend", ["HTML", "CSS", "Javascript", "Vue"]],
+             ["Front-end", ["HTML", "CSS", "Javascript", "Vue"]],
              ["Workflow", ["GIT", "Terminal", "Gulp", "Webpack"]],
             ];
 
@@ -150,7 +155,7 @@ block content
        .footer__copyright-col
          .footer__copyright-year &copy; 2020
          .footer__copyright-userinfo
-           .copyright__name Варфоламей Атаманович
+           .copyright__name Варфоламей #[br] Атаманов
            .copyright__title Личный сайт #[br] веб разработчика
        .footer__copyright-menu 
          nav.menu
@@ -163,7 +168,7 @@ block content
            p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool
 
            - var socials = ["insta", "vk", "github", "envelope"];
-             ul.socials.footer-socials
+             ul.socials.socials__footer
                each item in socials 
                  li.socials__item.item-footer
                    a(href="#").socials__link 

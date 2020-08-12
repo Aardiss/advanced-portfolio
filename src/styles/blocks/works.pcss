@@ -1,6 +1,6 @@
 
 .works-preview__pictures {
-  width: 672px;
+  max-width: 672px;
   position: relative;
   height: 350px;
 
@@ -15,13 +15,31 @@
     color: rgba(#e6e6e6, 1);
     transform: translateX(94%);
     z-index: -1;
+      @include tablets {
+    top: -64px;
+    font-size: 352px;
   }
+  @include phones {
+   display: none;
+  }
+  }
+   @include phones {
+   max-width: 432px;
+  }
+  
 }
 .works-preview__thumbs {
   position: absolute;
   left: 144px;
   bottom: 0px;
   width: 528px;
+    @include tablets {
+    left: 0;
+    width: 720px;
+  }
+  @include phones {
+    display: none;
+  }
 }
 .works-preview__btns {
   position: absolute;
@@ -29,6 +47,12 @@
   height: 148px;
   top: 78%;
   left: 671px;
+    @include tablets {
+    width: 56px;
+    height: 203px;
+    top: 71%;
+    left: 719px;
+  }
 }
 .works-preview__title {
  font-weight: bold;
@@ -45,21 +69,35 @@
 .works-preview__info {
   max-width: 448px;
   padding-left: 88px;
+    @include tablets {
+   max-width: 100%;
+   margin-top: 110px;
+   padding: 0 160px;
+   text-align: center;
+  }
 }
 .works-preview {
   display: flex;
+    @include tablets {
+    flex-direction: column;
+  }
 }
 .works {
   height: 1085px;
   @include desktop {
     height: 840px;
   }
+  @include tablets {
+    height: 1120px;
+  }
 }
 .works-preview__img {
   max-height: 108%;
   max-width: 108%;
-}
-.works__container {
-  height: 100vh;
-  max-width: 100%;
+    @include tablets {
+    max-height: 116%;
+  }
+   @include phones {
+   max-width: 100%;
+  }
 }

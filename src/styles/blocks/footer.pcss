@@ -2,7 +2,7 @@
   background-color: #222427;
   height: 370px;
    @include tablets {
-    padding: 50px 0;
+    height: 562px;
   }
 }
 .footer__copyright-year {
@@ -18,7 +18,8 @@
    padding-top: 80px;
   }
   @include tablets {
-    width: 30%;
+    padding-top: 64px;
+    position: relative;
   }
   @include phones {
     width: 100%;
@@ -33,18 +34,32 @@
    width: 20%;
    margin-right: 59px;
   }
+   @include tablets {
+    margin-right: 106px;
+  }
 }
 .footer__copyright-userinfo {
   min-width: 220px;
   @include desktop {
     width: 100%;
   }
+   @include tablets {
+    padding-bottom: 150px;
+  }
 }
 .footer__copyright-menu {
   min-width: 335px;
+   @include tablets {
+    min-width: 526px;
+  }
 }
 .footer__copyright-quote {
   padding-top: 82px;
+   @include tablets {
+    position: absolute;
+    padding-top: 268px;
+    padding-left: 265px;
+  }
 }
 .item-footer {
   width: 2.8125rem;
@@ -53,14 +68,15 @@
     position: relative;
     color: #fff;
     border-radius: 50%;
+    @include tablets {
+      height: 49px;
+      width: 51px;
+    }
 }
 .footer-socials {
   padding-top: 29px;
    @include desktop {
    padding-top: 45px;
+   margin-left: 0;
   }
-}
-.footer__container {
-  height: 100vh;
-  max-width: 100%;
 }
