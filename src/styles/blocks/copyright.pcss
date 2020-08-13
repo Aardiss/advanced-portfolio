@@ -6,6 +6,9 @@
     text-transform: uppercase;
     font-size: 20px;
   }
+  @include phones {
+    padding-bottom: 20px;
+  }
 }
 .copyright__title {
   color: rgba(255, 255, 255, 0.3);
@@ -13,6 +16,12 @@
 .copyright__content {
   color: rgba(255, 255, 255, 0.6);
   padding-top: 58px;
+  @include tablets {
+    width: 69%;
+  }
+   @include phones {
+    padding-top: 29px;
+  }
 }
 .copyright__text {
   color: rgba(255, 255, 255, 0.6);

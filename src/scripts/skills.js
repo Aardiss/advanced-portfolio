@@ -1,1 +1,5 @@
-console.log('this is the skills module');
+import Vue from "vue";
+
+nev Vue({
+  el: "#skills-component",
+})

@@ -2,14 +2,23 @@
 .slider__header {
   margin-bottom: 95px;
   display: flex;
-  justify-content: space-between;
   padding-right: 45%;
   @include desktop {
-  padding-right: 38%;
+  padding-right: 0;
   }
    @include tablets {
     padding-right: 0;
     margin-bottom: 47px;
+  }
+  @include phones {
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+  }
+}
+.slider__user {
+  @include phones {
+    display: none;
   }
 }
 .slider__content {
@@ -32,6 +41,9 @@
    @include tablets {
     margin-right: 0;
   }
+  @include phones {
+   width: 100%;
+  }
 
   &:last-child {
     margin-right: 0;
@@ -43,7 +55,7 @@
   @include desktop {
   margin-top: 157px;
   }
-   @include tablets {
-    padding-right: 250px;
+  @include phones {
+    margin: 26 auto;
   }
 }

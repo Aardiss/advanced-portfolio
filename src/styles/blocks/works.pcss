@@ -25,6 +25,7 @@
   }
    @include phones {
    max-width: 432px;
+   height: 248px;
   }
   
 }
@@ -72,8 +73,13 @@
     @include tablets {
    max-width: 100%;
    margin-top: 110px;
-   padding: 0 160px;
+   padding: 0 96px;
    text-align: center;
+  }
+  @include phones {
+   margin-top: 0px;
+   padding: 0;
+   text-align: inherit;
   }
 }
 .works-preview {
@@ -89,6 +95,9 @@
   }
   @include tablets {
     height: 1120px;
+  }
+  @include phones {
+   height: 848px;
   }
 }
 .works-preview__img {

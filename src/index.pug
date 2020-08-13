@@ -16,7 +16,7 @@ block content
           - var socials = ["insta", "vk", "github", "envelope"];
           ul.socials.header__socials
             each item in socials 
-              li.socials__item 
+              li.socials__item.socials__item-header
                 a(href="#").socials__link 
                   +icon(item, "socials__icon") 
 
@@ -65,28 +65,7 @@ block content
          .values__content 
            p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
        .values__widget 
-          -
-           var skillsCategories = [
-             ["Front-end", ["HTML", "CSS", "Javascript", "Vue"]],
-             ["Workflow", ["GIT", "Terminal", "Gulp", "Webpack"]],
-            ];
-
-          ul.skills  
-            each category in skillsCategories 
-              li.skills__item
-               .skills-row 
-                 .skills-row__title #{category[0]}
-                 ul.skills-row__list
-                   each skill in category[1]
-                     li.skills-row__item
-                       .skill
-                         svg(viewBox="0 0 100 100").skill__circle-shape
-                           circle(cx="50" cy="50" r="40").skill__circle.skill__circle--layer--under
-                           circle(cx="50" cy="50" r="40" stroke="url(#gradient)" transform="rotate(180 50 50)").skill__circle.skill__circle--layer--above
-                           linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0%")
-                             stop(offset="0%" stop-color="#d47e1d")
-                             stop(offset="100%" stop-color="#db9122")
-                         .skill__title #{skill}
+          #skills-component 
    section.works
 
      .container.works__container
@@ -136,7 +115,7 @@ block content
                  .user-display__data
                    .user-display__name Дмитрий Ковальчук
                    .user-display__occ Основатель LoftSchool
-          li.slider__item
+          li.slider__item.slider__user
            .quote
              .quote__text
                p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
@@ -155,8 +134,8 @@ block content
        .footer__copyright-col
          .footer__copyright-year &copy; 2020
          .footer__copyright-userinfo
-           .copyright__name Варфоламей #[br] Атаманов
-           .copyright__title Личный сайт #[br] веб разработчика
+           .copyright__name ВАРФОЛАМЕЙ АТАМАНОВ
+           .copyright__title Личный сайт веб разработчика
        .footer__copyright-menu 
          nav.menu
             -var menuItems = ["Обо мне", "Навыки", "Работы", "Отзывы"];

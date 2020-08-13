@@ -1,14 +1,29 @@
 .menu__item {
   margin-right: 60px;
-
   &:last-child {
     margin-right: 0;
+  }
+  @include tablets {
+    margin-right: 1.1rem;
+  }
+  @include phones {
+    padding-bottom: 30px;
+    margin-right: 79px;
+   &:last-child {
+    margin-right: 79px;
+  }
   }
 }
 .menu__list {
   display: flex;
   justify-content: center;
- 
+  @include tablets {
+    justify-content: flex-start;
+  }
+  @include phones {
+    flex-wrap: wrap;
+    justify-content: end;
+  }
 }
 .menu__link {
   text-decoration: none;

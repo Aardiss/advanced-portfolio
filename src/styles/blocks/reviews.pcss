@@ -12,6 +12,10 @@
    @include tablets {
     height: 651px;
   }
+  @include phones {
+   height: 571px;
+   margin-bottom: 0;
+  }
 }
 .section-title__reviews {
   font-weight: bold;
@@ -19,5 +23,13 @@
  margin-top: 125px;
  @include desktop {
   margin-top: 157px;
+  padding-right: 6%;
  }
+ @include tablets {
+   font-size: 30px;
+ }
+ @include phones {
+    margin-top: 100px;
+    font-size: 27px;
+  }
 }

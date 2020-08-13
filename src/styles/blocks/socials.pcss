@@ -6,13 +6,14 @@
   }
 }
 .socials__footer {
-
   padding-top: 20px;
-  
+  @include phones {
+    padding-top: 0;
+    padding-bottom: 62px;
+  }
 }
 .header__socials {
    @include tablets {
-    /* margin-left: 220px; */
     margin-top: 0;
   }
 }
@@ -32,15 +33,19 @@
   transition: 1s;
 }
 }
+.socials__item-header {
+  @include phones {
+    display: none;
+  }
+}
 .socials__item {
   margin-right: 30px;
    @include tablets {
      margin-right: 48px;
   }
   @include phones {
-    display: none;
+    margin-right: 25px;
   }
-
   &:last-child {
     margin-right: 0;
   }

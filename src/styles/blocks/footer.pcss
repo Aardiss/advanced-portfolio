@@ -1,8 +1,11 @@
 .footer {
   background-color: #222427;
-  height: 370px;
+  height: 402px;
    @include tablets {
     height: 562px;
+  }
+  @include phones {
+    height: 850px;
   }
 }
 .footer__copyright-year {
@@ -10,6 +13,9 @@
   font-size: 46px;
   color: rgba(255, 255, 255, 0.3);
   min-width: 184px;
+  @include phones {
+    font-size: 48px;
+  }
 }
 .footer__copyright {
   display: flex;
@@ -24,6 +30,7 @@
   @include phones {
     width: 100%;
     margin-bottom: 30px;
+    flex-direction: column;
   }
 }
 .footer__copyright-col {
@@ -37,6 +44,11 @@
    @include tablets {
     margin-right: 106px;
   }
+  @include phones {
+    margin-right: 0;
+    width: 100%;
+    margin-bottom: 40px;
+  }
 }
 .footer__copyright-userinfo {
   min-width: 220px;
@@ -46,11 +58,17 @@
    @include tablets {
     padding-bottom: 150px;
   }
+  @include phones {
+    padding-bottom: 10px;;
+  }
 }
 .footer__copyright-menu {
   min-width: 335px;
    @include tablets {
     min-width: 526px;
+  }
+  @include phones {
+    min-width: 100%;
   }
 }
 .footer__copyright-quote {
@@ -59,6 +77,11 @@
     position: absolute;
     padding-top: 268px;
     padding-left: 265px;
+  }
+  @include phones {
+    padding-top: 0;
+    padding-left: 0;
+    position: inherit;
   }
 }
 .item-footer {

@@ -55,6 +55,10 @@ padding-bottom: 26px;
 .skills-row__list {
   display: flex;
   padding-bottom: 30px;
+   @include tablets {
+    flex-wrap: wrap;
+    width: 125%
+  }
    @include phones {
     flex-wrap: wrap;
     justify-content: center;

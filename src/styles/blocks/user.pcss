@@ -51,6 +51,9 @@
 .user-display {
   display: flex;
   padding-left: 67px;
+  @include phones {
+    padding-left: 0;
+  }
 }
 .user-display__data {
   padding: 17px;
@@ -66,6 +69,14 @@
    @include phones {
     text-align: inherit;
     margin: 0 auto;
+  }
+}
+.user-display__avatar-style {
+  @include tablets {
+    width: 60px;
+  }
+  @include phones {
+    width: 60px;
   }
 }
 
