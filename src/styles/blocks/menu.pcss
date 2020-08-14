@@ -13,6 +13,11 @@
     margin-right: 79px;
   }
   }
+  
+  &:hover {
+  color: #ff9a00;
+  transition: 0.5s;
+}
 }
 .menu__list {
   display: flex;
@@ -28,12 +33,23 @@
 .menu__link {
   text-decoration: none;
   white-space: nowrap;
-
-
-  &:hover {
-  color: #ff9a00;
-  transition: 1s;
+  position: relative;
+  &::after {
+	content: '';
+	width: 0px;
+	height: 2px;
+	background: #ff9a00;
+	position: absolute;
+	top: 170%;
+	left: 0;
+	transition: .5s;
 }
+
+&:hover:after {
+	width: 100%;
+	transform: translationX(100%);
+}
+
 }
 .menu__header {
    @include tablets {
