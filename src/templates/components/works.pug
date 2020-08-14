@@ -25,7 +25,7 @@ script(type="text/x-template")#preview-display
 
 script(type="text/x-template")#preview-thumbs
   ul.thumbs
-      li.thumbs__item(
+    li.thumbs__item(
         v-for="slide in works" :key="slide.id"
         :class="{active: currentWork.id = slide.id}"
       )
@@ -57,4 +57,4 @@ script(type="text/x-template")#preview-info
 script(type="text/x-template")#preview-tags
   ul.tags
     li.tags__item(v-for="tag in tags")
-    .tag {{tag}}
+      .tag {{tag}}
