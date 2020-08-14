@@ -2,11 +2,11 @@ import Vue from "vue";
 
 const thumbs = {
     props: ["works", "currentWork"],
-    template: "#preview-thumbs"
-}
+    template: "#preview-thumbs",
+};
 
 const btns = {
-    template: "#preview-btns"
+    template: "#preview-btns",
 };
 
 const display = { 
@@ -17,26 +17,25 @@ const display = {
         reversedWorks() {
             const works = [...this.works];
             return works.slice(0, 3).reverse();
-        }
-    }
+        },
+    },
 };
 
 const tags = {
     props: ["tags"],
-    template: "#preview-tags"
-}
+    template: "#preview-tags",
+};
 
 const info = {
     props: ["currentWork"],
     template: "#preview-info",
-    components: { tags },
+    components: {tags},
     computed: {
         tagsArray() {
-            return this.currentWork.skill.split(",");
+            return this.currentWork.skills.split(",");
         }
     }
 };
-
 
 new Vue({
     el: "#preview-component",
@@ -47,13 +46,13 @@ new Vue({
             works: [],
             currentWork: {},
             currentIndex: 0
-        }
+        };
     },
     computed: {
         currentWork() {
             // return this.works[this.currentIndex];
             return this.works[0];
-        }
+        },
     },
     watch: {
         currentIndex(value) {
@@ -62,15 +61,15 @@ new Vue({
     },
     methods: {
         makeInfiniteLoopForNdx(index) {
-            const workNumber = this.works.length - 1
-            if (index < 0) this.currentIndex = workNumber;
-            if (index > workNumber - 1) this.currentIndex = 0;
+            const worksNumber = this.works.length - 1;
+            if (index < 0) this.currentIndex = worksNumber;
+            if (index > worksNumber) this.currentIndex = 0;
         },
         requireImagesToArray(data) {
-            return data.map(item => {
-                const requiredImage = require(`../images/${item.photo}`).default;
+            return data.map((item) => {
+                const requiredImage = require(`../images/content/${item.photo}`).default;
                 item.photo = requiredImage;
-                return item
+                return item;
             });
         },
         slide(direction) {
@@ -79,11 +78,13 @@ new Vue({
               case "next":
                 this.works.push(this.works[0]);
                 this.works.shift();  
-              this.currentIndex++;
+                this.currentIndex++;
+                break;
               case "prev":
                 this.works.unshift(lastItem);
                 this.works.pop();
-                 this.currentIndex--;
+                this.currentIndex--;
+                break;
             }
         },
     },
