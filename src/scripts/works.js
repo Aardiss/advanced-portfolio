@@ -44,7 +44,7 @@ new Vue({
     data() {
         return {
             works: [],
-            currentWork: {},
+            // currentWork: {},
             currentIndex: 0
         };
     },

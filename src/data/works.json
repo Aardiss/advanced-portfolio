@@ -3,15 +3,15 @@
         "id": 1,
         "title": "1 Сайт школы онлайн-образования",
         "skills": "1 HTML, CSS, JS",
-        "photo": "one.png",
-        "link": "//google.com",
+        "photo": "1.png",
+        "link": "//yandex.ru",
         "desc": "1 Этот парень был из тех, кто просто любит жизнь"
     },
     {
         "id": 2,
         "title": "2 Сайт школы онлайн-образования",
         "skills": "2 HTML, CSS, JS",
-        "photo": "two.png",
+        "photo": "2.png",
         "link": "//google.com",
         "desc": "2 Этот парень был из тех, кто просто любит жизнь"
     },
@@ -19,7 +19,7 @@
         "id": 3,
         "title": "3 Сайт школы онлайн-образования",
         "skills": "3 HTML, CSS, JS",
-        "photo": "three.png",
+        "photo": "3.png",
         "link": "//yahoo.com",
         "desc": "3 Этот парень был из тех, кто просто любит жизнь"
     }
