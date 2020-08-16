@@ -43,5 +43,5 @@ new Vue({
     const data = require("../data/reviews.json");
     this.reviews = this.requireImagesToArray(data);
     this.defineSliderOptions();
-  },
+  },  
 });
