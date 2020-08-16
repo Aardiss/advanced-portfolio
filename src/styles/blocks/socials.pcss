@@ -7,9 +7,12 @@
 }
 .socials__footer {
   padding-top: 20px;
+  position: absolute;
+  z-index: 1;
   @include phones {
     padding-top: 0;
     padding-bottom: 62px;
+    position: relative;
   }
 }
 .header__socials {
@@ -41,10 +44,10 @@
 .socials__item {
   margin-right: 30px;
    @include tablets {
-     margin-right: 48px;
+     padding-right: 48px;
   }
   @include phones {
-    margin-right: 25px;
+    padding-right: 25px;
   }
   &:last-child {
     margin-right: 0;
