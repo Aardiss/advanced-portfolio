@@ -10,7 +10,7 @@ new Vue({
     return {
       reviews: [],
       sliderOptions: {
-        slidesPerView: 2,
+        slidesPerView: null,
       },
     };
   },
@@ -24,18 +24,24 @@ new Vue({
     },
     slide(direction) {
       const slider = this.$refs["slider"].$swiper;
+      const reviewsCount = this.reviews.length -1;
       switch (direction) {
         case "next":
-          slider.slideNext();
+          if (slider.activeIndex <= reviewsCount) slider.slideNext();
           break;
         case "prev":
-          slider.slidePrev();
+          if (slider.activeIndex > 0) slider.slidePrev();
           break;
       }
+    },
+    defineSliderOptions() {
+      if (window.innerWidth <= 900) {this.sliderOptions.slidesPerView = 1}
+      else if (window.innerWidth > 900) {this.sliderOptions.slidesPerView = 2};
     },
   },
   created() {
     const data = require("../data/reviews.json");
     this.reviews = this.requireImagesToArray(data);
+    this.defineSliderOptions();
   },
 });
