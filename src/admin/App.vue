@@ -8,7 +8,7 @@
       <div class="container">
         <div class="header">
           <div class="title">Блок "Обо мне"</div>
-          <iconed-button type="iconed" title="Заголовок" />
+          <iconed-button type="iconed" title="Добавить группу" />
         </div>
       </div>
     </div>
