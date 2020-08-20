@@ -4,6 +4,14 @@
       <user />
     </headline>
     <navigation />
+    <div class="page-content">
+      <div class="container">
+        <div class="header">
+          <div class="title">Блок "Обо мне"</div>
+          <iconed-button type="iconed" title="Заголовок" />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -11,13 +19,14 @@
 import headline from "./components/headline";
 import user from "./components/user";
 import navigation from "./components/navigation";
-
+import button from "./components/button";
 
 export default {
   components: {
     headline,
     user,
     navigation,
+    iconedButton: button
   },
 };
 </script>
