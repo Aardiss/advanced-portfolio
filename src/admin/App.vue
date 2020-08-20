@@ -16,17 +16,19 @@
 </template>
 
 <script>
-import headline from "./components/headline";
-import user from "./components/user";
-import navigation from "./components/navigation";
-import button from "./components/button";
+import headline from "./components/headline/headline";
+import user from "./components/user/user";
+import navigation from "./components/navigation/navigation";
+import button from "./components/button/button";
+import category from "./components/category/category";
 
 export default {
   components: {
     headline,
     user,
     navigation,
-    iconedButton: button
+    iconedButton: button,
+    category
   },
 };
 </script>
