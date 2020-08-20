@@ -2,7 +2,7 @@
     {
         "id": 1,
         "title": "Сайт беспечных мотоциклистов",
-        "skills": "1 HTML, CSS, JS",
+        "skills": "HTML, CSS, JS",
         "photo": "1.png",
         "link": "//yandex.ru",
         "desc": "Этот парень был из тех, кто просто любит жизнь"
@@ -10,7 +10,7 @@
     {
         "id": 2,
         "title": "Сайт свободного человека",
-        "skills": "2 HTML, CSS, JS",
+        "skills": "HTML, CSS, JS",
         "photo": "2.png",
         "link": "//google.com",
         "desc": "Я свободен, словно птица в небесах"
@@ -18,7 +18,7 @@
     {
         "id": 3,
         "title": "Сайт клуба бессонницы",
-        "skills": "3 HTML, CSS, JS",
+        "skills": "HTML, CSS, JS",
         "photo": "3.png",
         "link": "//yahoo.com",
         "desc": "От края до края, небо в огне сгорает"
