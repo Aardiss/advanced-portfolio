@@ -18,7 +18,7 @@
              <category />
           </li>
           <li class="item">
-             <category />
+             <category empty />
           </li>
        </ul>
       </div>

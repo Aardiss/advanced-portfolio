@@ -1,14 +1,14 @@
 <template> 
   <card slim>
-    <edit-line slot="title" v-model="title" editModeByDefault/>
+    <edit-line slot="title" v-model="title" :editModeByDefault="empty"/>
     <template slot="content">
-      <ul class="skills">
+      <ul class="skills" v-if="empty == false">
         <li class="item" v-for="skill in skills" :key="skill.id">
           <skill :skill="skill" />
         </li>
       </ul>
       <div class="bottom-line">
-        <skillAddLine />
+        <skill-add-line :blocked="empty" />
       </div>
     </template>
   </card>
@@ -31,6 +31,9 @@ export default {
     editLine,
     skill,
     skillAddLine
+  },
+  props: {
+    empty: Boolean
   },
   data() {
     return {
