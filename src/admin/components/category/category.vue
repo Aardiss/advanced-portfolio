@@ -1,10 +1,19 @@
 <template> 
   <card slim>
-    <edit-line slot="title" v-model="title" :editModeByDefault="empty"/>
+    <edit-line 
+    slot="title" 
+    v-model="categoryTitle" 
+    :editModeByDefault="empty"
+    @remove="$emit('remove', $event)"
+    />
     <template slot="content">
       <ul class="skills" v-if="empty == false">
         <li class="item" v-for="skill in skills" :key="skill.id">
-          <skill :skill="skill" />
+          <skill 
+          :skill="skill" 
+          @remove="$emit('remove-skill', $event)"
+          @approve="$emit('edit-skill', $event)"
+          />
         </li>
       </ul>
       <div class="bottom-line">
@@ -33,12 +42,19 @@ export default {
     skillAddLine
   },
   props: {
-    empty: Boolean
+    empty: Boolean,
+    title: {
+      type: String,
+      default: ""
+    },
+    skills: {
+      type: Array,
+      default: () => []
+    }
   },
   data() {
     return {
-      title: "",
-      skills 
+      categoryTitle: this.title 
     }
   }
 }
