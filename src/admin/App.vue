@@ -10,6 +10,17 @@
           <div class="title">Блок "Обо мне"</div>
           <iconed-button type="iconed" title="Добавить группу" />
         </div>
+        <ul class="skills">
+          <li class="item">
+             <category />
+          </li>
+          <li class="item">
+             <category />
+          </li>
+          <li class="item">
+             <category />
+          </li>
+       </ul>
       </div>
     </div>
   </div>
