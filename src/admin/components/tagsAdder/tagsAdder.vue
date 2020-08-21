@@ -32,7 +32,7 @@ export default {
   },
   props: {
     tags: {
-      type: Strind,
+      type: String,
       default: ""
     }
   },
