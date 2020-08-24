@@ -11,7 +11,8 @@
       {
       "id": 1, 
       "title": "Css", 
-      "percent": 20},
+      "percent": 20
+      },
       {
       "id": 2, 
       "title": "JavaScript", 
@@ -31,7 +32,8 @@
       {
       "id": 1, 
       "title": "Css", 
-      "percent": 20},
+      "percent": 20
+      },
       {
       "id": 2, 
       "title": "JavaScript", 
@@ -51,7 +53,8 @@
       {
       "id": 1, 
       "title": "Docker", 
-      "percent": 20},
+      "percent": 20
+      },
       {
       "id": 2, 
       "title": "Bash", 

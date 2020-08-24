@@ -24,22 +24,17 @@
 </template>
 
 <script>
-import card from "../card";
-import editLine from "../editLine";
-import skill from "../skill";
-import skillAddLine from "../skillAddLine";
-
-const skills = [
+  const skills = [
   {id: 0, title: "Html", percent: 80},
   {id: 1, title: "Css", percent: 20},
   {id: 2, title: "JavaScript", percent: 50},
 ]
 export default {
   components: {
-    card, 
-    editLine,
-    skill,
-    skillAddLine
+    card: () => import("../Card"), 
+    editLine: () => import("../editLine"),
+    skill: () => import("../skill"),
+    skillAddLine: () => import("../skillAddLine")
   },
   props: {
     empty: Boolean,
