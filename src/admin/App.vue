@@ -15,7 +15,8 @@
           title="Добавить группу" />
         </div>
         <ul class="skills">
-          <li class="item" v-if="emptyCatIsShown">
+          <li class="item" 
+          v-if="emptyCatIsShown">
             <category 
             @remove="emptyCatIsShown = false"
             empty 

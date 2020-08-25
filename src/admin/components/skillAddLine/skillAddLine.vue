@@ -9,7 +9,7 @@
       <app-input type="number" min="0" max="100" maxlength="3" />
     </div>
     <div class="button">
-      <round-button type="round" />
+      <round-button v-on="$listeners" type="round" data-text="+" class="round-button-component"></round-button>
     </div>
   </div>
 </template>

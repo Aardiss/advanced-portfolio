@@ -8,11 +8,11 @@ const methods = {
 
 export default {
   title: "skill",
-  components: {skill}
+  components: { skill }
 }
 
 export const defaultView = () => ({
-  components: {skill},
+  components: { skill },
   data() {
     return {
       skill: {
@@ -23,7 +23,11 @@ export const defaultView = () => ({
     }
   },
   template: `
-   <skill @approve="onApprove" @remove="onRemove" :skill="skill" />
+   <skill 
+      @approve="onApprove" 
+      @remove="onRemove" 
+      :skill="skill" 
+    />
   `,
   methods
 });
