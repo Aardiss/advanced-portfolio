@@ -31,8 +31,14 @@
 <script>
 // import input from "../input";
 // import icon from "../icon";
-
+import {Validator} from 'simple-vue-validator';
 export default {
+  mixins: [require('simple-vue-validator').mixin],
+validators: {
+  'currentSkill.title'(value) {
+    return Validator.value(value).required('Поле не может быть пустым!');
+  }
+},
   props: {
     skill: {
       type: Object,
