@@ -4,7 +4,7 @@
       <div class="text">{{value}}</div>
       <div class="icon">
         <icon symbol="pencil" grayscale @click="editmode = true"></icon>
-        <icon symbol="trash" grayscale @click="$emit('remove')"></icon>
+        <icon symbol="trash" grayscale @click="onDelete"></icon>
       </div>
     </div>
     <div v-else class="title">
@@ -68,6 +68,9 @@ export default {
         this.$emit('remove');
       }
       this.editmode = false;
+    },
+    onDelete() {
+      this.$emit('remove');
     }
   },
   components: {

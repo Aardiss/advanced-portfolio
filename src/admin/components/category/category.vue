@@ -11,13 +11,14 @@
         <li class="item" v-for="skill in skills" :key="skill.id">
           <skill 
           :skill="skill" 
+          :skills="skills"
           @remove="$emit('remove-skill', $event)"
           @approve="$emit('edit-skill', $event)"
           />
         </li>
       </ul>
       <div class="bottom-line">
-        <skill-add-line :blocked="empty" />
+        <skill-add-line :blocked="empty" :skills="skills"/>
       </div>
     </template>
   </card>

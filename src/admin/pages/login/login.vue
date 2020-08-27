@@ -21,7 +21,7 @@
             />
         </div>
         <div class="btn">
-          <app-button title="Отправить" />
+          <app-button title="Отправить" @click="handleSubmit" />
         </div>
       </div>
     </div>
@@ -50,11 +50,12 @@ export default {
     user: {
       name: "",
       password: "",
-    },
+    }
   }),
   components: { appButton, appInput },
   methods: {
     handleSubmit() {
+      debugger;
       this.$validate().then((isValid) => {
         if (isValid == false) return;
 

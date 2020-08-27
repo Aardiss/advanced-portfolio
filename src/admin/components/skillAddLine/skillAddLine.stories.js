@@ -12,6 +12,15 @@ export default {
 
 export const defaultView = () => ({
   components: { skillAddLine },
+  data() {
+    return {
+      newSkill: {
+        id: 0,
+        title: "Test",
+        percent: 10
+      }
+    }
+  },
   template: `
    <skill-add-line @click="onClick" />
   `,

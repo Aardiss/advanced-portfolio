@@ -4,8 +4,7 @@
     <div class="percent">{{skill.percent}}</div>
     <div class="buttons">
       <icon symbol="pencil" class="btn" @click="editmode = true" grayscale/>
-      <!-- <icon symbol="trash" class="btn" @click="$emit('remove', skill.id)" grayscale/> -->
-      <icon symbol="trash" class="btn" @click="onDelete" grayscale/>
+      <icon symbol="trash" class="btn" @click="onDelete" grayscale />
     </div>
   </div>
   <div class="skill-component" v-else>
@@ -22,16 +21,11 @@
         <div class="button-icon">
           <icon symbol="cross" @click="onRemove"></icon>
         </div>      
-      <!-- <icon symbol="tick" class="btn" @click="$emit('approve', currentSkill)" /> -->
-      <!-- <icon symbol="cross" class="btn" @click="editmode = false" /> -->
     </div>
   </div>
 </template>
 
 <script>
-// import input from "../input";
-// import icon from "../icon";
-import {Validator} from 'simple-vue-validator';
 export default {
   mixins: [require('simple-vue-validator').mixin],
 validators: {
@@ -45,6 +39,10 @@ validators: {
       default: () => {},
       required: true
     },
+    skills: {
+      type: Array,
+      default: () => []
+    },    
     editModeByDefault: Boolean,
   },
   data() {
@@ -74,7 +72,11 @@ validators: {
       } 
     },
     onDelete() {
-      this.$emit("remove", this.currentSkill.id);
+      for(let i = 0; i < this.skills.length; i++) {
+        if (this.skills[i].title === this.currentSkill.title
+        && this.skills[i].percent === this.currentSkill.percent)
+        this.skills.splice(i, 1);
+      }
     }
   },
   components: {

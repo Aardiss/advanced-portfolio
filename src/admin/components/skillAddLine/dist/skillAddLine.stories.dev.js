@@ -27,6 +27,15 @@ var defaultView = function defaultView() {
     components: {
       skillAddLine: _skillAddLine["default"]
     },
+    data: function data() {
+      return {
+        newSkill: {
+          id: 0,
+          title: "Test",
+          percent: 10
+        }
+      };
+    },
     template: "\n   <skill-add-line @click=\"onClick\" />\n  ",
     methods: methods
   };
