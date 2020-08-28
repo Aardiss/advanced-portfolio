@@ -35,11 +35,11 @@ import { Validator, mixin as ValidatorMixin } from "simple-vue-validator";
 export default {
   mixins: [ValidatorMixin],
   validators: {
-    "user.name": value => {
-      return Validator.value(value).required("Введите название навыка");
+    "newSkill.title": value => {
+      return Validator.value(value).required("Введите навык");
     },
-     "user.password": value => {
-      return Validator.value(value).required("Введите процент навыка");
+     "newSkill.percent": value => {
+      return Validator.value(value).required("Введите % навыка");
     }
   },  
   props: {
@@ -55,7 +55,7 @@ export default {
         id: 0,
         title: this.title,
         percent: this.percent
-      }
+      },
     }
   },
   components: {
@@ -73,15 +73,8 @@ export default {
       this.newSkill.title = null,
       this.newSkill.percent = null      
     },
-    validateFields: function() {
-      this.$validate().then(async (isValid) => {
-        if (isValid == false) return;
-        this.isSubmitDisabled = true;      
-      });
-    },
     onAddNew() {
-      pushNew();
-      validateFields();
+      this.pushNew();
     }
   }
 };

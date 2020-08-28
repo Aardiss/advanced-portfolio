@@ -1,9 +1,9 @@
 import Vue from 'vue';
 import App from './App.vue';
 import router from "./router";
-import babel from "@babel/plugin-transform-runtime";
+import {Validator} from "simple-vue-validator";
 
-Vue.use(VueSimpleValidator, { mode: 'manual' });
+Vue.use(Validator);
 
 new Vue({
   el: "#app-root",

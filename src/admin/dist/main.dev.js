@@ -6,13 +6,11 @@ var _App = _interopRequireDefault(require("./App.vue"));
 
 var _router = _interopRequireDefault(require("./router"));
 
-var _pluginTransformRuntime = _interopRequireDefault(require("@babel/plugin-transform-runtime"));
+var _simpleVueValidator = require("simple-vue-validator");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-_vue["default"].use(VueSimpleValidator, {
-  mode: 'manual'
-});
+_vue["default"].use(_simpleVueValidator.Validator);
 
 new _vue["default"]({
   el: "#app-root",
