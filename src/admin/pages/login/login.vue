@@ -21,7 +21,7 @@
             />
         </div>
         <div class="btn">
-          <app-button title="Отправить" @click="handleSubmit" />
+          <app-button :disabled="isSubmitDisabled" title="Отправить" @click="handleSubmit" />
         </div>
       </div>
     </div>
@@ -32,7 +32,7 @@
 import appInput from "../../components/input";
 import appButton from "../../components/button";
 import { Validator, mixin as ValidatorMixin } from "simple-vue-validator";
-import axios from "axios";
+import $axios from "../../requests";
 
 const baseUrl = "https://webdev-api.loftschool.com/";
 
@@ -50,18 +50,27 @@ export default {
     user: {
       name: "",
       password: "",
-    }
+    },
+    isSubmitDisabled: false,
   }),
   components: { appButton, appInput },
   methods: {
-    handleSubmit() {
-      debugger;
-      this.$validate().then((isValid) => {
+    async handleSubmit() {
+      this.$validate().then(async (isValid) => {
         if (isValid == false) return;
+        this.isSubmitDisabled = true;
+        try {
+          const response = await $axios.post("/login", this.user);
 
-        axios.post("https://webdev-api.loftschool.com/login", this.user).then(response => {
-          console.log(response);
-        })
+          const token = response.data.token;
+          localStorage.setItem("token", token);
+          $axios.defaults.headers["Authorization"] = `Bearer ${token}`;
+          this.$router.replace("/");
+        } catch (error) {
+          console.log(error.response.data.error)
+        } finally {
+          this.isSubmitDisabled = false;
+        }
       });
     },
   },
