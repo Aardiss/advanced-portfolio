@@ -36,7 +36,7 @@ module.exports = function (env, argv) {
     exclude: /node_modules/,
     options: {
       presets: ["@babel/preset-env"],
-      plugins: ["@babel/plugin-syntax-dynamic-import"]
+      plugins: ["@babel/plugin-transform-runtime", "@babel/plugin-syntax-dynamic-import"]
     }
   };
   var files = {
