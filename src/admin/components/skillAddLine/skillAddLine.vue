@@ -56,6 +56,7 @@ export default {
         title: this.title,
         percent: this.percent
       },
+      isValid: Boolean
     }
   },
   components: {
@@ -63,17 +64,27 @@ export default {
     roundButton: button,
   },
   methods: {
+    checkValid: function() {
+      this.isValid = true;
+      if (!this.newSkill.title || !this.newSkill.percent) {
+          this.isValid = false;
+          console.log(this.isValid)
+        }
+      },
     pushNew: function() {
-      this.skills.push({ 
-      id: this.skills.length, 
-      title: this.newSkill.title, 
-      percent: this.newSkill.percent
-      }),
+      if (this.isValid == true) {
+          this.skills.push({ 
+          id: this.skills.length, 
+          title: this.newSkill.title, 
+          percent: this.newSkill.percent
+        })
+      }
       this.newSkill.id = null,
       this.newSkill.title = null,
       this.newSkill.percent = null      
     },
     onAddNew() {
+      this.checkValid();
       this.pushNew();
     }
   }

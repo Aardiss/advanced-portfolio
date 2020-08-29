@@ -56,23 +56,21 @@ export default {
   components: { appButton, appInput },
   methods: {
     async handleSubmit() {
-      debugger;
       this.$validate().then(async (isValid) => {
         if (isValid == false) return;
         this.isSubmitDisabled = true;
-        console.log(isValid);
-        // try {
-        //   const response = await $axios.post("/login", this.user);
+        try {
+          const response = await $axios.post("/login", this.user);
 
-        //   const token = response.data.token;
-        //   localStorage.setItem("token", token);
-        //   $axios.defaults.headers["Authorization"] = `Bearer ${token}`;
-        //   this.$router.replace("/");
-        // } catch (error) {
-        //   console.log(error.response.data.error)
-        // } finally {
-        //   this.isSubmitDisabled = false;
-        // }
+          const token = response.data.token;
+          localStorage.setItem("token", token);
+          $axios.defaults.headers["Authorization"] = `Bearer ${token}`;
+          this.$router.replace("/");
+        } catch (error) {
+          console.log(error.response.data.error)
+        } finally {
+          this.isSubmitDisabled = false;
+        }
       });
     },
   },
