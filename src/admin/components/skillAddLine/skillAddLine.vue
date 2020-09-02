@@ -1,93 +1,66 @@
 <template>
-  <div
-    :class="[ 'skill-add-line-component', {blocked: blocked}]"
-  >
+  <div :class="['skill-add-line-component', {blocked: blocked}]">
     <div class="title">
-      <app-input 
-      v-model="newSkill.title" 
-      placeholder="Новый навык"
-      :errorMessage="validation.firstError('newSkill.title')" />
+      <app-input
+        :errorMessage="validation.firstError('skill.title')"
+        v-model="skill.title"
+        placeholder="Новый навык"
+      />
     </div>
     <div class="percent">
-      <app-input 
-      v-model="newSkill.percent" 
-      type="number" 
-      min="0" 
-      max="100" 
-      maxlength="3" 
-      :errorMessage="validation.firstError('newSkill.percent')" />
+      <app-input
+        :errorMessage="validation.firstError('skill.percent')"
+        v-model="skill.percent"
+        type="number"
+        min="0"
+        max="100"
+        maxlength="3"
+      />
     </div>
     <div class="button">
-      <round-button 
-      class="round-button-component" 
-      type="round" 
-      data-text="+" 
-      @click="onAddNew"></round-button>
+      <round-button type="round" @click="handleClick" />
     </div>
   </div>
 </template>
 
 <script>
-import button from "../button";
 import input from "../input";
+import button from "../button";
 import { Validator, mixin as ValidatorMixin } from "simple-vue-validator";
-
 export default {
   mixins: [ValidatorMixin],
   validators: {
-    "newSkill.title": value => {
-      return Validator.value(value).required("Введите навык");
+    "skill.title": (value) => {
+      return Validator.value(value).required("Не может быть пустым");
     },
-     "newSkill.percent": value => {
-      return Validator.value(value).required("Введите % навыка");
-    }
-  },  
+    "skill.percent": (value) => {
+      return Validator.value(value)
+        .integer("Должно быть числом")
+        .between(0, 100, "Некорректное значение")
+        .required("Не может быть пустым");
+    },
+  },
   props: {
     blocked: Boolean,
-    skills: {
-      type: Array,
-      default: () => []
-    }
-  },
-  data() {
-    return {
-      newSkill: {
-        id: 0,
-        title: this.title,
-        percent: this.percent
-      },
-      isValid: Boolean
-    }
   },
   components: {
     appInput: input,
     roundButton: button,
   },
-  methods: {
-    checkValid: function() {
-      this.isValid = true;
-      if (!this.newSkill.title || !this.newSkill.percent) {
-          this.isValid = false;
-          console.log(this.isValid)
-        }
+  data() {
+    return {
+      skill: {
+        title: "",
+        percent: "",
       },
-    pushNew: function() {
-      if (this.isValid == true) {
-          this.skills.push({ 
-          id: this.skills.length, 
-          title: this.newSkill.title, 
-          percent: this.newSkill.percent
-        })
-      }
-      this.newSkill.id = null,
-      this.newSkill.title = null,
-      this.newSkill.percent = null      
+    };
+  },
+  methods: {
+    async handleClick() {
+      if (await this.$validate() === false) return;
+      this.$emit("approve", this.skill);
     },
-    onAddNew() {
-      this.checkValid();
-      this.pushNew();
-    }
-  }
+  },
 };
 </script>
 

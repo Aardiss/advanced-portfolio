@@ -4,7 +4,6 @@
       <div class="text">{{value}}</div>
       <div class="icon">
         <icon symbol="pencil" grayscale @click="editmode = true"></icon>
-        <icon symbol="trash" grayscale @click="onDelete"></icon>
       </div>
     </div>
     <div v-else class="title">
@@ -24,8 +23,7 @@
           <icon symbol="tick" @click="onApprove"></icon>
         </div>
         <div class="button-icon">
-          <icon symbol="cross" @click="onRemove"></icon>
-          <!-- <icon symbol="cross" @click="$emit('remove')"></icon> -->
+          <icon symbol="cross" @click="$emit('remove')"></icon>
         </div>
       </div>
     </div>
@@ -37,46 +35,35 @@ export default {
   props: {
     value: {
       type: String,
-      default: ""
+      default: "",
     },
     errorText: {
       type: String,
-      default: ""
+      default: "",
     },
     editModeByDefault: Boolean,
-    blocked: Boolean
+    blocked: Boolean,
   },
   data() {
     return {
       editmode: this.editModeByDefault,
-      title: this.value
+      title: this.value,
     };
   },
   methods: {
     onApprove() {
+      if (this.value.trim() === "") return false;
       if (this.title.trim() === this.value.trim()) {
         this.editmode = false;
       } else {
         this.$emit("approve", this.value);
-        this.editmode = false;
       }
     },
-    onRemove() {
-      if (this.value.trim() != this.title.trim()) {
-        this.value = this.title;
-      } else if (this.value == "") {
-        this.$emit('remove');
-      }
-      this.editmode = false;
-    },
-    onDelete() {
-      this.$emit('remove');
-    }
   },
   components: {
     icon: () => import("components/icon"),
-    appInput: () => import("components/input")
-  }
+    appInput: () => import("components/input"),
+  },
 };
 </script>
 

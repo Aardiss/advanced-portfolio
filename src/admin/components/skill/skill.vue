@@ -1,10 +1,10 @@
 <template>
-  <div class="skill-component" v-if="editmode == false">
+  <div class="skill-component" v-if="currentSkill.editmode === false">
     <div class="title">{{skill.title}}</div>
     <div class="percent">{{skill.percent}}</div>
     <div class="buttons">
-      <icon symbol="pencil" class="btn" @click="editmode = true" grayscale/>
-      <icon symbol="trash" class="btn" @click="onDelete" grayscale />
+      <icon symbol="pencil" class="btn" @click="currentSkill.editmode = true" grayscale />
+      <icon symbol="trash" class="btn"  @click="$emit('remove', currentSkill)" grayscale />
     </div>
   </div>
   <div class="skill-component" v-else>
@@ -16,10 +16,10 @@
     </div>
     <div class="buttons">
         <div class="button-icon">
-          <icon symbol="tick" @click="onApprove"></icon>
+          <icon symbol="tick" class="btn" @click="$emit('approve', currentSkill)" />
         </div>
         <div class="button-icon">
-          <icon symbol="cross" @click="onRemove"></icon>
+          <icon symbol="cross" class="btn" @click="currentSkill.editmode = false" />
         </div>      
     </div>
   </div>
@@ -47,12 +47,14 @@ validators: {
   },
   data() {
     return {
-      editmode: this.editModeByDefault,
+      
       currentSkill: {
-        id: 0,
+        id: this.skill.id,
         title: this.skill.title,
-        percent: this.skill.percent
-      }
+        percent: this.skill.percent,
+        category: this.skill.category,
+        editmode: false
+      },
     };
   },
   methods: {

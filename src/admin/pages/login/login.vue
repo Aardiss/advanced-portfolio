@@ -33,6 +33,7 @@ import appInput from "../../components/input";
 import appButton from "../../components/button";
 import { Validator, mixin as ValidatorMixin } from "simple-vue-validator";
 import $axios from "../../requests";
+import { mapActions } from "vuex";
 
 const baseUrl = "https://webdev-api.loftschool.com/";
 
@@ -55,23 +56,27 @@ export default {
   }),
   components: { appButton, appInput },
   methods: {
+     ...mapActions({
+      showTooltip: "tooltips/show"
+    }),
     async handleSubmit() {
-      this.$validate().then(async (isValid) => {
-        if (isValid == false) return;
-        this.isSubmitDisabled = true;
-        try {
-          const response = await $axios.post("/login", this.user);
+      if (await this.$validate() == false) return;
+      this.isSubmitDisabled = true;
+      try {
+        const response = await $axios.post("/login", this.user);
 
-          const token = response.data.token;
-          localStorage.setItem("token", token);
-          $axios.defaults.headers["Authorization"] = `Bearer ${token}`;
-          this.$router.replace("/");
-        } catch (error) {
-          console.log(error.response.data.error)
-        } finally {
-          this.isSubmitDisabled = false;
-        }
-      });
+        const token = response.data.token;
+        localStorage.setItem("token", token);
+        $axios.defaults.headers["Authorization"] = `Bearer ${token}`;
+        this.$router.replace("/");
+      } catch (error) {
+        this.showTooltip({
+          text: error.response.data.error,
+          type: "error"
+        })
+      } finally {
+        this.isSubmitDisabled = false;
+      }
     },
   },
 };

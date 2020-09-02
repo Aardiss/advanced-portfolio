@@ -5,6 +5,7 @@
     v-model="categoryTitle" 
     :editModeByDefault="empty"
     @remove="$emit('remove', $event)"
+    @approve="$emit('approve', $event)"
     />
     <template slot="content">
       <ul class="skills" v-if="empty == false">
@@ -18,13 +19,20 @@
         </li>
       </ul>
       <div class="bottom-line">
-        <skill-add-line :blocked="empty" :skills="skills"/>
+        <skill-add-line 
+        @approve="$emit('create-skill', $event)"
+        :blocked="empty" :skills="skills"/>
       </div>
     </template>
   </card>
 </template>
 
 <script>
+import card from "../card";
+import editLine from "../editLine";
+import skill from "../skill";
+import skillAddLine from "../skillAddLine";
+
   const skills = [
   {id: 0, title: "Html", percent: 80},
   {id: 1, title: "Css", percent: 20},
